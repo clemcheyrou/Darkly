@@ -1,4 +1,0 @@
-- Form upload photo (content type)
-- .hidden files (scrapping)
-- Brute force signin (https://portswigger.net/web-security/authentication/password-based)
-- Survey (modify input)

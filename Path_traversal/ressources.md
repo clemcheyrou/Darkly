@@ -17,7 +17,8 @@ Le **path traversal** (ou traversal de chemin) est une vulnérabilité de sécur
   
 Exemple d’URL vulnérable :
 http://192.168.56.3/index.php?page=../../../../../../../etc/passwd
--> b12c4b2cb8094750ae121a676269aa9e2872d07c06e429d25a63196ec1c8c1d0
+
+Flag obtenu-> b12c4b2cb8094750ae121a676269aa9e2872d07c06e429d25a63196ec1c8c1d0
 
 ## Défenses insuffisantes
 
@@ -43,7 +44,7 @@ Une application peut exiger une extension de fichier spécifique (ex : `.png`), 
 
 Exemple : filename=../../../etc/passwd%00.png
 
-## Comment vraiment l'éviter
+## Comment l'éviter
 
 ### 1. **Ne pas utiliser les entrées utilisateur directement pour appeler un fichier**
 

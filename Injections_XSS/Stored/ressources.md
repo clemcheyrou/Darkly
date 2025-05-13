@@ -16,7 +16,7 @@ Dans ce cas précis :
 
 Cela empêche les caractères spéciaux nécessaires à une XSS classique (`<`, `>`, `"`, `'`, etc.) d’être utilisés.
 
-## Flag obtenu
+-> Flag obtenu
 0fbb54bbf7d099713ca4be297e1bc7da0173d8b3c21c1811b916a3a86652724e
 
 ## Comment l’éviter
