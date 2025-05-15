@@ -1,25 +1,18 @@
 ### Nom de la faille / Définition
-FR : Brute Force sur formulaire de connexion
+Login Brute Force
 Cette faille permet à un attaquant de deviner un mot de passe en testant automatiquement un grand nombre de combinaisons jusqu’à trouver les bons identifiants.
-EN : Login Brute Force
-This vulnerability allows an attacker to guess a password by automatically testing a large number of combinations until the correct credentials are found.
 
 ## Contexte spécifique / Overview
-FR:
-Le site possède une page de connexion située à l’URL index.php?page=signin. Aucun mécanisme de protection contre les attaques par force brute n’est en place (ex : limitation de tentatives, captcha, blocage IP).
-En testant le nom d’utilisateur admin avec l’outil Hydra, un mot de passe faible a été trouvé : shadow.
-EN :
-The application has a login page at index.php?page=signin. It lacks brute force protection (such as attempt rate limiting, captcha, or IP blocking).
-Using the username admin, we launched a Hydra brute force attack and successfully found the password shadow.
+Le site possède une page de connexion située à l’URL index.php?page=signin. Aucun mécanisme de protection contre les attaques par force brute n’est en place (ex : limitation de tentatives, captcha, blocage IP etc).
+En testant le nom d’utilisateur admin avec un simple script (ou mieux, avec l'outil Hydra), un mot de passe faible a été trouvé : shadow.
 
 ## Risques / Risks
-FR :
 Un attaquant peut accéder à un compte administrateur sans aucune vulnérabilité technique, simplement par force brute, si le mot de passe est faible et aucune protection n’est mise en place. Cela permet de compromettre tout le système.
-EN :
-An attacker can gain admin access just by brute-forcing a weak password if there are no countermeasures. This could compromise the whole system.
 
 ## Comment la trouver / How it was discovered
-FR :
+On lance un script bash qui teste une quinzaine de mots de passe les plus courants, et on obtient le mdp shadow.
+On se connecte ensuite avec "admin" et ce mdp. On obtient le flag.
+ALTERNATIVE:
 Via l’outil Hydra, en ciblant la page index.php?page=signin.
 Commande utilisée :
  ` hydra -l admin -P ~/Downloads/10-million-password-list-top-100.txt -F -o hydra.log localhost:8080 http-get-form '/index.php:page=signin&username=^USER^&password=^PASS^&Login=Login:F=images/WrongAnswer.gif' `
@@ -33,22 +26,18 @@ Commande utilisée :
 	-o : log de la tentative (hydra.log)
 
 	http-get-form : méthode d’attaque sur formulaire GET
+
 Le mot de passe trouvé : shadow
 
-EN :
-We used Hydra on the login form. The command:
-hydra -l admin -P /root/dictionary/10-million-password-list-top-500.txt -F -o hydra.log x.x.x.x http-get-form '/index.php:page=signin&username=^USER^&password=^PASS^&Login=Login:F=images/WrongAnswer.gif'
-This discovered that the correct password for admin was shadow.
 
 ## Ressources / Outils
+- script testant une quinzaine de mdp courants les uns apres les autres de facon automatisee (voir le script.sh)
+ALTERNATIVE:
 - Hydra – outil de brute force réseau
-- Wordlist : 10-million-password-list-top-500.txt (fournie dans Dockerfile)
-- DevTools : inspection du formulaire pour comprendre les paramètres GET
-- Exemple d'URL brute-forcée :
-/index.php?page=signin&username=admin&password=shadow&Login=Login
+- puis donner en parametre a hydra une wordlist : 10-million-password-list-top-500.txt
 
 ## Flag
-B3A6E43DDF8B4BBB4125E5E7D23040433827759D4DE1C04EA63907479A80A6B2
+b3a6e43ddf8b4bbb4125e5e7d23040433827759d4de1c04ea63907479a80a6b2
 
 ## Comment l’éviter / How to fix it
 FR :
@@ -58,10 +47,3 @@ FR :
 - Bloquer l’adresse IP temporairement après un certain nombre d’échecs
 - Utiliser CAPTCHA après plusieurs échecs
 - Logger toutes les tentatives échouées et les surveiller
-EN :
-- Enforce strong password policies
-- Limit login attempts (e.g., 5 tries max)
-- Add delay between attempts
-- Ban IP addresses after repeated failures
-- Use a CAPTCHA mechanism
-- Log and monitor failed login attempts
