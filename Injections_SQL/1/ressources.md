@@ -8,9 +8,9 @@ Les injections SQL sont une technique utilisée par des utilisateurs malveillant
 Les injections SQL présentent plusieurs risques majeurs pour la sécurité des applications web :
 
 - **Accès non autorisé aux données**
-- **Modification des données** 
+- **Modification des données**
 - **Exécution de commandes**
-- **Déni de service** 
+- **Déni de service**
 
 ## Détection et Exploitation
 
@@ -50,8 +50,8 @@ Les injections SQL présentent plusieurs risques majeurs pour la sécurité des 
      - Décryptez le mot de passe en utilisant un outil de décryptage MD5, comme [dcode.fr](https://www.dcode.fr/md5-hash).
        - Exemple de résultat : `FortyTwo`.
      - Convertissez le mot de passe en minuscules : `fortytwo`.
-     - Appliquez la fonction de hachage SHA-256 au mot de passe en minuscules pour obtenir le résultat final.
-       - Exemple de résultat : `10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5`.
+     - Appliquez la fonction de hachage SHA-256 [encrypteur sha-256](https://10015.io/tools/sha256-encrypt-decrypt) au mot de passe en minuscules pour obtenir le résultat final.
+       - Flag obtenu: `10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5`.
 
 ## Comment l'éviter
 

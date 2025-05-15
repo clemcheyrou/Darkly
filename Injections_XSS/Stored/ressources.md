@@ -9,18 +9,13 @@ Même si cela ressemble à une simple modification de l'interface, cela peut êt
 
 ## Détection et exploitation
 
-Dans ce cas précis :
-
-- L'**input utilisateur est limité** à une seule lettre parmi les suivantes :  
-  `p, a, r, t, i, c, l, e, s`
-
-Cela empêche les caractères spéciaux nécessaires à une XSS classique (`<`, `>`, `"`, `'`, etc.) d’être utilisés.
+Dans ce cas précis l'input de feedback empêche les caractères spéciaux nécessaires à une XSS classique (`<`, `>`, `"`, `'`, etc.) d’être utilisés. Cependant, il n'empêche pas les valeurs tel que script qui pourrait être réinterpréter par le serveur.
 
 -> Flag obtenu
 0fbb54bbf7d099713ca4be297e1bc7da0173d8b3c21c1811b916a3a86652724e
 
 ## Comment l’éviter
 
-1. **Échapper les caractères spéciaux HTML**
+1. **Échapper les caractères spéciaux HTML et le nom de balise**
 
 Pour prévenir ce type de vulnérabilité, il est essentiel d’**échapper les caractères spéciaux** dans tout contenu HTML généré dynamiquement à partir d'une entrée utilisateur.

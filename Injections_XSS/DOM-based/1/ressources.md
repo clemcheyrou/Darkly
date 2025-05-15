@@ -12,7 +12,7 @@ Les attaques DOM-based XSS et les formulaires non protégés présentent plusieu
 - **Vol de données sensibles**
 - **Manipulation du contenu de la page**
 - **Redirection vers des sites malveillants**
-- **Exécution de commandes arbitraires**
+- **Exécution de commandes**
 
 ## Détection et Exploitation
 
@@ -26,12 +26,11 @@ Les attaques DOM-based XSS et les formulaires non protégés présentent plusieu
 
 1. **Exploitation des formulaires non protégés** :
    - Modifiez les valeurs des options de sélection pour injecter du code malveillant ou accéder à des informations sensibles.
-   - Par exemple, modifiez la valeur de l'option `<option value="2">2</option>` pour injecter du code malveillant.
+   - Par exemple, modifiez la valeur de l'option `<option value="2">2</option>` par exemple value="20000".
    - Envoyez la valeur modifiée au backend pour exploiter la vulnérabilité.
 
-2. **Obtention du flag** :
-   - En exploitant la vulnérabilité DOM-based XSS et les formulaires non protégés, vous pouvez obtenir le flag suivant :
-     - Flag : `03a944b434d5baff05f46c4bede5792551a2595574bcafc9a6e25f67c382ccaa`
+   Flag obtenu:
+   `03a944b434d5baff05f46c4bede5792551a2595574bcafc9a6e25f67c382ccaa`
 
 ## Comment l'éviter
 
