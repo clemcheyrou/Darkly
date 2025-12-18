@@ -23,10 +23,10 @@ Pour savoir si votre application web possède une vulnérabilité open redirect,
 
 - **Les liens de redirection vers les reseaux comme ici**
 
-Le test le plus simple est bien sûr de renseigner un nom de domaine totallement différent au paramètre "redirect "et de constater ou non une redirection
+Le test le plus simple est bien sûr de reperer un "redirect" dans l'url, puis de changer le nom de domaine a la suite du mot-cle "site" et de constater ou non une redirection. 
 
 ### Exploitation
-Ici on renseigne 'admin'
+Ici on renseigne 'admin' (ou autre chose) a la place de la redirection vers les RS comme Twitter par exemple
 
 ```
 http://192.168.56.102/index.php?page=redirect&site=admin
