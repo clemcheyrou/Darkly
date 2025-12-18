@@ -9,7 +9,7 @@ Même si cela ressemble à une simple modification de l'interface, cela peut êt
 
 ## Détection et exploitation
 
-Dans ce cas précis l'input de feedback empêche les caractères spéciaux nécessaires à une XSS classique (`<`, `>`, `"`, `'`, etc.) d’être utilisés. Cependant, il n'empêche pas les valeurs tel que script qui pourrait être réinterpréter par le serveur.
+Dans ce cas précis l'input de feedback empêche les caractères spéciaux nécessaires à une XSS classique (`<`, `>`, `"`, `'`, etc.) d’être utilisés. Cependant, il n'empêche pas les valeurs telles que `script` qui pourrait être réinterpréter par le serveur.
 
 -> Flag obtenu
 0fbb54bbf7d099713ca4be297e1bc7da0173d8b3c21c1811b916a3a86652724e

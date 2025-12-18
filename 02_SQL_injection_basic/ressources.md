@@ -43,8 +43,7 @@ Les injections SQL présentent plusieurs risques majeurs pour la sécurité des 
      - Exemple de résultat : `id, url, title, comment`.
 
    - **Obtenir des données spécifiques** :
-     - Utilisez la requête `1 UNION SELECT 1, url FROM list_images` pour obtenir les URLs des images.
-     - Utilisez la requête `1 UNION SELECT 1, title FROM list_images` pour obtenir les titres des images.
+     - Utilisez la requête `1 UNION SELECT 1, comment FROM list_images` qui nous donne 'Title: If you read this just use this md5 decode lowercase then sha256 to win this flag ! : 1928e8083cf461a51303633093573c46'
 
    - **Décryptage du flag** :
      - Utilisez un outil de décryptage MD5, comme [dcode.fr](https://www.dcode.fr/md5-hash), pour décrypter le hash MD5 obtenu.
