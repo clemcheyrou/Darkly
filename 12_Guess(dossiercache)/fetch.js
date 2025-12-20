@@ -29,7 +29,7 @@ async function* traverseDirectory(baseDirectory) {
 
 const readmeFilesContent = []
 
-for await (const readmeFileContent of traverseDirectory('http://192.168.56.101/.hidden/')) {
+for await (const readmeFileContent of traverseDirectory('http://192.168.56.103/.hidden/')) {
     readmeFilesContent.push(readmeFileContent)
 }
 
