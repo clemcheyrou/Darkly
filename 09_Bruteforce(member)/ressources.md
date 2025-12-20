@@ -1,15 +1,15 @@
-### Nom de la faille / Définition
+### Nom de la faille
 Login Brute Force
 Cette faille permet à un attaquant de deviner un mot de passe en testant automatiquement un grand nombre de combinaisons jusqu’à trouver les bons identifiants.
 
-## Contexte spécifique / Overview
+## Contexte spécifique
 Le site possède une page de connexion située à l’URL index.php?page=signin. Aucun mécanisme de protection contre les attaques par force brute n’est en place (ex : limitation de tentatives, captcha, blocage IP etc).
 En testant le nom d’utilisateur admin avec un simple script, un mot de passe faible a été trouvé : shadow.
 
-## Risques / Risks
+## Risques
 Un attaquant peut accéder à un compte administrateur sans aucune vulnérabilité technique, simplement par force brute, si le mot de passe est faible et aucune protection n’est mise en place. Cela permet de compromettre tout le système.
 
-## Comment la trouver / How it was discovered
+## Comment la trouver
 On lance un script bash qui teste une quinzaine de mots de passe les plus courants, et on obtient le mdp shadow.
 On se connecte ensuite avec "admin" et ce mdp. On obtient le flag.
 
@@ -19,7 +19,7 @@ On se connecte ensuite avec "admin" et ce mdp. On obtient le flag.
 ## Flag
 b3a6e43ddf8b4bbb4125e5e7d23040433827759d4de1c04ea63907479a80a6b2
 
-## Comment l’éviter / How to fix it
+## Comment l’éviter
 - Imposer des mots de passe robustes (longueur, complexité)
 - Limiter les tentatives de connexion (ex : 5 essais max)
 - Mettre en place un délai entre chaque tentative (progressif)

@@ -3,7 +3,6 @@ import * as cheerio from 'cheerio'
 import { writeFile } from 'fs/promises'
 
 async function* traverseDirectory(baseDirectory) {
-    console.log(baseDirectory)
     const htmlPage = await got(baseDirectory).text()
 
     const $ = cheerio.load(htmlPage)
