@@ -9,7 +9,7 @@ Dans la plupart des cas, les attaquants utilisent les vulnérabilités open redi
 
 Plus rarement, les attaquants peuvent également se servir des vulnérabilités open redirect pour faire effectuer à sa victime des actions sans leur consentement.
 
-Et ici permet d'acceder a des pages non authorisees.
+Et ici permet d'acceder a des pages non autorisees.
 
 ## Détection et exploitation
 
